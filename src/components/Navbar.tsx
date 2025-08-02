@@ -17,12 +17,18 @@ export const Navbar: React.FC = () => {
   return (
     <nav className={`${
       isHome 
-        ? 'absolute top-0 left-0 right-0 z-50 bg-gradient-to-b from-white from-40% via-white/95 via-70% to-transparent dark:from-gray-900 dark:from-40% dark:via-gray-900/95 dark:via-70% dark:to-transparent border-none backdrop-blur-[2px]'
+        ? 'absolute top-0 left-0 right-0 z-50'
         : 'relative bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700'
     }`}>
+      {/* Gradient overlay for home page - separate from content */}
+      {isHome && (
+        <div className="absolute inset-0 bg-gradient-to-b from-white from-40% via-white/95 via-70% to-transparent dark:from-gray-900 dark:from-40% dark:via-gray-900/95 dark:via-70% dark:to-transparent pointer-events-none" />
+      )}
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          <Link to="/" className="flex items-center space-x-2">
+        <div className="flex justify-between items-center h-16 relative">
+          {/* Logo container with solid background to prevent gradient affecting it */}
+          <Link to="/" className={`flex items-center space-x-2 rounded-lg ${isHome ? 'bg-white dark:bg-gray-900 p-2' : ''}`}>
             <Logo className="w-8 h-8" />
             <span className="text-xl font-bold text-gray-900 dark:text-white">
               Munda Wanga Real Estate
