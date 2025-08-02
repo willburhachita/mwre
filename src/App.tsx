@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
+import { ScrollRestoration } from './components/ScrollRestoration';
 import { HomePage } from './pages/HomePage';
 import { ListingsPage } from './pages/ListingsPage';
 import { ListingDetailPage } from './pages/ListingDetailPage';
@@ -13,6 +14,7 @@ import { AdminDashboard } from './pages/AdminDashboard';
 function App() {
   return (
     <Router>
+      <ScrollRestoration />
       <div className="min-h-screen bg-white dark:bg-gray-900">
         <Routes>
           {/* Admin routes without navbar/footer */}
