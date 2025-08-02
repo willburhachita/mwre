@@ -9,12 +9,10 @@ import { HighlightsPage } from './pages/HighlightsPage';
 import { ContactPage } from './pages/ContactPage';
 import { AdminLoginPage } from './pages/AdminLoginPage';
 import { AdminDashboard } from './pages/AdminDashboard';
-import { ScrollToTop } from './components/ScrollToTop';
 
 function App() {
   return (
     <Router>
-      <ScrollToTop />
       <div className="min-h-screen bg-white dark:bg-gray-900">
         <Routes>
           {/* Admin routes without navbar/footer */}
